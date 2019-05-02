@@ -1,4 +1,4 @@
-# ssm-project
+# ssm-demo
 
 #### 介绍
 SSM框架搭建示例Demo
