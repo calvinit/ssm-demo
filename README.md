@@ -3,6 +3,8 @@
 #### 介绍
 SSM框架搭建示例Demo
 
+[从零开始搭建SSM框架（Spring + Spring MVC + Mybatis）](https://segmentfault.com/a/1190000019059207)
+
 #### 使用说明
 
 1. 使用 docs/ssm.sql 脚本创建示例数据库和表，初始化测试数据；
