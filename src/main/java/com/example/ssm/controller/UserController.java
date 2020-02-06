@@ -2,6 +2,7 @@ package com.example.ssm.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.ssm.converter.UserVoConverter;
@@ -12,8 +13,6 @@ import com.example.ssm.vo.UserVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,8 +25,7 @@ public class UserController {
     private IUserService userService;
     private UserVoConverter userVoConverter;
 
-    @Autowired
-    public UserController(@NonNull IUserService userService, @NonNull UserVoConverter userVoConverter) {
+    public UserController(IUserService userService, UserVoConverter userVoConverter) {
         this.userService = userService;
         this.userVoConverter = userVoConverter;
     }
@@ -44,19 +42,19 @@ public class UserController {
         Page<User> page = new Page<>();
         page.setSize(pageSize);
         page.setCurrent(pageNum);
-        page.setAsc(User.CREATE_DT, User.LAST_UPDATE_DT);
+        page.addOrder(OrderItem.asc(User.CREATE_DT), OrderItem.asc(User.LAST_UPDATE_DT));
 
         IPage<User> userPage = userService.selectPage(page);
         List<User> userList = userPage.getRecords();
         List<UserVo> userVoList = userVoConverter.batchEntityToVo(userList);
 
-        return new PageVo<UserVo>()
-                .setPageNum(userPage.getCurrent())
-                .setPageSize(userPage.getSize())
-                .setPageTotal(userPage.getPages())
-                .setRowTotal(userPage.getTotal())
-                .setRowList(userVoList)
-                .get();
+        return PageVo.<UserVo>builder()
+                .pageNum(userPage.getCurrent())
+                .pageSize(userPage.getSize())
+                .pageTotal(userPage.getPages())
+                .rowTotal(userPage.getTotal())
+                .rowList(userVoList)
+                .build();
     }
 
     @ApiOperation(value = "查询某个用户")

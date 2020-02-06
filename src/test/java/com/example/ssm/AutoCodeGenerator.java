@@ -6,7 +6,6 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
-import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import org.junit.Test;
@@ -28,8 +27,6 @@ public class AutoCodeGenerator {
         globalConfig.setAuthor("calvinit");
         globalConfig.setOpen(false);
         globalConfig.setFileOverride(true);
-        // Druid 1.1.16 版本貌似不支持 java8 新的时间类型，如 java.time.LocalDateTime
-        globalConfig.setDateType(DateType.ONLY_DATE);
 
         autoGenerator.setGlobalConfig(globalConfig);
 

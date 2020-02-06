@@ -29,7 +29,7 @@ public class Swagger2Configuration {
                 .title("SSM框架搭建Demo")
                 .description("SSM框架搭建Demo，仅供猿友们学习交流之用，请勿用于商业用途")
                 .contact(contact)
-                .version("1.0-SNAPSHOT")
+                .version("1.0-RELEASE")
                 .build();
     }
 }

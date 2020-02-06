@@ -10,27 +10,26 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.mapstruct.factory.Mappers;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Slf4j
-// @RunWith(SpringJUnit4ClassRunner.class)
-// @ContextConfiguration(locations = {"classpath:spring/applicationContext-*.xml"})
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:spring/applicationContext-*.xml"})
 public class UserGroupDtoConverterTests {
 
-    // @Autowired
-    // private UserGroupDtoConverter userGroupDtoConverter;
-    // @Autowired
-    // private UserGroupDto2Converter userGroupDto2Converter;
-
-    private UserGroupDtoConverter userGroupDtoConverter = Mappers.getMapper(UserGroupDtoConverter.class);
-    private UserGroupDto2Converter userGroupDto2Converter = Mappers.getMapper(UserGroupDto2Converter.class);
+    @Autowired
+    private UserGroupDtoConverter userGroupDtoConverter;
+    @Autowired
+    private UserGroupDto2Converter userGroupDto2Converter;
 
     @Test
     public void testMapping() throws JsonProcessingException {
-        // LocalDateTime now = LocalDateTime.now();
-        Date now = new Date();
+        LocalDateTime now = LocalDateTime.now();
 
         User user = new User();
         user.setId(1);

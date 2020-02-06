@@ -19,9 +19,17 @@ public interface IUserService extends IService<User> {
     @Transactional(readOnly = true, rollbackFor = Exception.class)
     User selectByPrimaryKey(int id);
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     @Transactional(readOnly = true, rollbackFor = Exception.class)
     List<User> list();
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
     @Transactional(readOnly = true, rollbackFor = Exception.class)
     List<User> list(Wrapper<User> queryWrapper);
 }

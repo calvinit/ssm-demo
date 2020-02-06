@@ -34,41 +34,41 @@ public class ObjectMapperFactory {
 
     static class LocalDateSerializer extends JsonSerializer<LocalDate> {
 
-        private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         /**
          * {@inheritDoc}
          */
         @Override
         public void serialize(LocalDate value, JsonGenerator jgen, SerializerProvider provider) throws IOException {
-            jgen.writeString(dateFormatter.format(value));
+            jgen.writeString(DATE_FORMATTER.format(value));
         }
     }
 
     static class LocalDateTimeSerializer extends JsonSerializer<LocalDateTime> {
 
-        private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         /**
          * {@inheritDoc}
          */
         @Override
         public void serialize(LocalDateTime value, JsonGenerator jgen, SerializerProvider provider) throws IOException {
-            jgen.writeString(dateTimeFormatter.format(value));
+            jgen.writeString(DATE_TIME_FORMATTER.format(value));
         }
 
     }
 
     static class LocalTimeSerializer extends JsonSerializer<LocalTime> {
 
-        private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+        private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss");
 
         /**
          * {@inheritDoc}
          */
         @Override
         public void serialize(LocalTime value, JsonGenerator jgen, SerializerProvider provider) throws IOException {
-            jgen.writeString(timeFormatter.format(value));
+            jgen.writeString(TIME_FORMATTER.format(value));
         }
     }
 }

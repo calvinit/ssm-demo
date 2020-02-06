@@ -1,14 +1,14 @@
 package com.example.ssm.vo;
 
+import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
 @Data
-@Accessors(chain = true)
+@Builder
 public class PageVo<T> implements Serializable {
 
     private static final long serialVersionUID = 7524276290658542899L;
@@ -32,8 +32,4 @@ public class PageVo<T> implements Serializable {
      * 数据行列表
      */
     private List<T> rowList = Collections.emptyList();
-
-    public PageVo<T> get() {
-        return this;
-    }
 }

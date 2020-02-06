@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -17,7 +17,7 @@ import java.util.Date;
 @TableName("t_user_group_relation")
 public class UserGroupRelation implements Serializable {
 
-    private static final long serialVersionUID = 5947200140623924174L;
+    private static final long serialVersionUID = 3715165496654956671L;
 
     /**
      * ID
@@ -41,7 +41,7 @@ public class UserGroupRelation implements Serializable {
      * 创建时间
      */
     @TableField("create_dt")
-    private Date createDt;
+    private LocalDateTime createDt;
 
     public static final String ID = "id";
 

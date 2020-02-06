@@ -9,7 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.mapstruct.factory.Mappers;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
@@ -21,8 +21,7 @@ public class UserVoTests {
     public void testMapping() throws JsonProcessingException {
         ObjectWriter objectWriter = new ObjectMapper().writerWithDefaultPrettyPrinter();
 
-        // LocalDateTime now = LocalDateTime.now();
-        Date now = new Date();
+        LocalDateTime now = LocalDateTime.now();
 
         User user1 = new User();
         user1.setId(1);
