@@ -21,7 +21,7 @@
         <spring.version>5.2.3.RELEASE</spring.version>
         <junit.version>4.13</junit.version>
 
-        <lombok.version>1.18.10</lombok.version>
+        <lombok.version>1.18.12</lombok.version>
 
         <mybatis-plus.version>3.3.1</mybatis-plus.version>
         <freemarker.version>2.3.29</freemarker.version>
