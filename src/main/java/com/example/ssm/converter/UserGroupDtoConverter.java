@@ -11,11 +11,15 @@ import org.mapstruct.Mappings;
 public interface UserGroupDtoConverter {
 
     @Mappings({
-            @Mapping(source = "user.id", target = "userId"),
-            @Mapping(source = "user.name", target = "userName"),
-            @Mapping(source = "group.id", target = "groupId"),
-            @Mapping(source = "group.name", target = "groupName"),
-            @Mapping(source = "user.tel", target = "telephone")
+            @Mapping(target = "userId", source = "user.id"),
+            @Mapping(target = "userName", source = "user.name"),
+            @Mapping(target = "groupId", source = "group.id"),
+            @Mapping(target = "groupName", source = "group.name"),
+            @Mapping(target = "gender", source = "user.gender"),
+            @Mapping(source = "user.tel", target = "telephone"),
+            @Mapping(target = "birthday", source = "user.birthday"),
+            @Mapping(target = "address", source = "user.address"),
+            @Mapping(target = "visible", source = "group.visible")
     })
     UserGroupDto mergeEntitiesToDto(User user, Group group);
 }

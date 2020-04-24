@@ -12,7 +12,7 @@
     <mvc:default-servlet-handler/>
 
     <!-- Jackson ObjectMapper -->
-    <bean id="objectMapper" class="com.example.ssm.json.ObjectMapperFactory" factory-method="getMapper"/>
+    <bean id="objectMapper" class="com.example.ssm.factory.ObjectMapperFactory" factory-method="getMapper"/>
 
     <mvc:annotation-driven>
         <mvc:message-converters>
@@ -36,7 +36,8 @@
     </bean>
 
     <!-- Swagger2 配置 -->
-    <bean class="com.example.ssm.configure.Swagger2Configuration"/>
+    <bean id="swagger2DocketFactory" class="com.example.ssm.factory.Swagger2DocketFactory"/>
+    <bean id="docket" factory-bean="swagger2DocketFactory" factory-method="createDocket"/>
     <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
     <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
 </beans>

@@ -1,4 +1,4 @@
-package com.example.ssm.json;
+package com.example.ssm.factory;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

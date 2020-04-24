@@ -22,8 +22,8 @@ import java.util.List;
 @RequestMapping("/users")
 public class UserController {
 
-    private IUserService userService;
-    private UserVoConverter userVoConverter;
+    private final IUserService userService;
+    private final UserVoConverter userVoConverter;
 
     public UserController(IUserService userService, UserVoConverter userVoConverter) {
         this.userService = userService;
@@ -40,9 +40,9 @@ public class UserController {
             @RequestParam(value = "pageSize", defaultValue = "10") int pageSize) {
 
         Page<User> page = new Page<>();
-        page.setSize(pageSize);
         page.setCurrent(pageNum);
-        page.addOrder(OrderItem.asc(User.CREATE_DT), OrderItem.asc(User.LAST_UPDATE_DT));
+        page.setSize(pageSize);
+        page.addOrder(OrderItem.ascs(User.CREATE_DT, User.LAST_UPDATE_DT));
 
         IPage<User> userPage = userService.selectPage(page);
         List<User> userList = userPage.getRecords();

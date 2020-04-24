@@ -15,7 +15,7 @@ import java.util.List;
 @Slf4j
 public class UserVoTests {
 
-    private UserVoConverter userVoConverter = Mappers.getMapper(UserVoConverter.class);
+    private final UserVoConverter userVoConverter = Mappers.getMapper(UserVoConverter.class);
 
     @Test
     public void testMapping() throws JsonProcessingException {

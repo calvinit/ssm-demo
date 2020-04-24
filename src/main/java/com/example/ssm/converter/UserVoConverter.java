@@ -13,8 +13,8 @@ import java.util.List;
 public interface UserVoConverter {
 
     @Mappings({
-            @Mapping(source = "id", target = "userId"),
-            @Mapping(source = "name", target = "userName"),
+            @Mapping(target = "userId", source = "id"),
+            @Mapping(target = "userName", source = "name"),
             @Mapping(target = "createDt", dateFormat = "yyyy-MM-dd HH:mm:ss"),
             @Mapping(target = "lastUpdateDt", dateFormat = "yyyy-MM-dd HH:mm:ss")
     })

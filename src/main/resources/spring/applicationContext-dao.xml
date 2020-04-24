@@ -75,6 +75,11 @@
         <property name="useGlobalDataSourceStat" value="true"/>
     </bean>
 
+    <bean id="jsqlParserCountOptimize"
+          class="com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize">
+        <property name="optimizeJoin" value="true"/>
+    </bean>
+
     <!-- 配置会话工厂 -->
     <bean id="sqlSessionFactory" class="com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -85,7 +90,11 @@
             <array>
                 <!-- 分页插件配置 -->
                 <bean id="paginationInterceptor"
-                      class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor"/>
+                      class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor">
+                    <property name="overflow" value="true"/>
+                    <property name="limit" value="500"/>
+                    <property name="countSqlParser" ref="jsqlParserCountOptimize"/>
+                </bean>
                 <!-- 乐观锁插件 -->
                 <bean id="optimisticLockerInterceptor"
                       class="com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor"/>

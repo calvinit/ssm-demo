@@ -12,10 +12,10 @@ import org.mapstruct.Mappings;
 public interface UserGroupDto2Converter {
 
     @Mappings({
-            @Mapping(source = "userGroupRelation.id", target = "id"),
-            @Mapping(source = "user", target = "userDto"),
-            @Mapping(source = "group", target = "groupDto"),
-            @Mapping(source = "userGroupRelation.createDt", target = "createDt", dateFormat = "yyyy-MM-dd HH:mm:ss")
+            @Mapping(target = "id", source = "userGroupRelation.id"),
+            @Mapping(target = "userDto", source = "user"),
+            @Mapping(target = "groupDto", source = "group"),
+            @Mapping(target = "createDt", source = "userGroupRelation.createDt", dateFormat = "yyyy-MM-dd HH:mm:ss")
     })
     UserGroupDto2 mergeEntitiesToDto(User user, UserGroupRelation userGroupRelation, Group group);
 }
