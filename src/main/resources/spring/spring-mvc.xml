@@ -14,7 +14,7 @@
     <!-- Jackson ObjectMapper -->
     <bean id="objectMapper" class="com.example.ssm.factory.ObjectMapperFactory" factory-method="getMapper"/>
 
-    <mvc:annotation-driven>
+    <mvc:annotation-driven enable-matrix-variables="true">
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
                 <property name="objectMapper" ref="objectMapper"/>
@@ -35,9 +35,8 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- Swagger2 配置 -->
-    <bean id="swagger2DocketFactory" class="com.example.ssm.factory.Swagger2DocketFactory"/>
-    <bean id="docket" factory-bean="swagger2DocketFactory" factory-method="createDocket"/>
-    <mvc:resources mapping="swagger-ui.html" location="classpath:/META-INF/resources/"/>
-    <mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+    <!-- Swagger3 配置 -->
+    <bean id="oas3DocketFactory" class="com.example.ssm.factory.OpenApiSpecificationDocketFactory"/>
+    <bean id="docket" factory-bean="oas3DocketFactory" factory-method="createDocket"/>
+    <mvc:resources mapping="/swagger-ui/**" location="classpath:/META-INF/resources/webjars/springfox-swagger-ui/"/>
 </beans>

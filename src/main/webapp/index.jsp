@@ -5,6 +5,6 @@
 </head>
 <body>
 <h2>Hello World!</h2>
-<a href="${pageContext.request.contextPath}/swagger-ui.html">打开 Swagger UI</a>
+<a href="${pageContext.request.contextPath}/swagger-ui/index.html">打开 Swagger UI</a>
 </body>
 </html>

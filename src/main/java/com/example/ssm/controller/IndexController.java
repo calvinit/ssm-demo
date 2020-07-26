@@ -1,6 +1,5 @@
 package com.example.ssm.controller;
 
-import com.google.common.collect.Maps;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
@@ -9,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import springfox.documentation.annotations.ApiIgnore;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Api(tags = "首页控制器")
@@ -34,7 +34,7 @@ public class IndexController {
     @GetMapping("/date/test")
     @ResponseBody
     public Map<String, Object> testDate() {
-        Map<String, Object> map = Maps.newHashMap();
+        Map<String, Object> map = new HashMap<>(7);
 
         map.put("java.util.Date", new java.util.Date());
         map.put("java.sql.Date", new java.sql.Date(System.currentTimeMillis()));
