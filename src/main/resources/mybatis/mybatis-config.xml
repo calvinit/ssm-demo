@@ -4,15 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <settings>
-        <!--配置允许懒加载-->
+        <!-- 配置允许懒加载 -->
         <setting name="lazyLoadingEnabled" value="true"/>
-        <!--取消关联查询积极性-->
+        <!-- 取消关联查询积极性 -->
         <setting name="aggressiveLazyLoading" value="false"/>
-        <!--哪些方法触发关系查询-->
+        <!-- 哪些方法触发关系查询 -->
         <setting name="lazyLoadTriggerMethods" value="clone"/>
     </settings>
-    <!--配置别名-->
+    <!-- 配置别名 -->
     <typeAliases>
-        <!--<package name=""/>-->
+        <!--<package name="com.example.ssm.entity"/>-->
     </typeAliases>
 </configuration>

@@ -58,8 +58,8 @@
         <property name="testOnBorrow" value="false"/>
         <property name="testOnReturn" value="false"/>
         <property name="testWhileIdle" value="true"/>
-        <property name="removeAbandoned" value="false"/>
-        <property name="removeAbandonedTimeout" value="120"/>
+        <property name="removeAbandoned" value="true"/>
+        <property name="removeAbandonedTimeout" value="300"/>
         <property name="logAbandoned" value="true"/>
         <property name="validationQuery" value="SELECT 1"/>
         <property name="poolPreparedStatements" value="true"/>
@@ -75,9 +75,26 @@
         <property name="useGlobalDataSourceStat" value="true"/>
     </bean>
 
-    <bean id="jsqlParserCountOptimize"
-          class="com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize">
-        <property name="optimizeJoin" value="true"/>
+    <!-- 分页内部插件配置 -->
+    <bean id="paginationInnerInterceptor"
+          class="com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor">
+        <constructor-arg name="dbType" value="MYSQL"/>
+        <property name="overflow" value="true"/>
+        <property name="maxLimit" value="500"/>
+    </bean>
+
+    <!-- 乐观锁内部插件 -->
+    <bean id="optimisticLockerInnerInterceptor"
+          class="com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor"/>
+
+    <!-- MyBatis-Plus 主体插件配置 -->
+    <bean id="mybatisPlusInterceptor" class="com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor">
+        <property name="interceptors">
+            <list>
+                <ref bean="paginationInnerInterceptor"/>
+                <ref bean="optimisticLockerInnerInterceptor"/>
+            </list>
+        </property>
     </bean>
 
     <!-- 配置会话工厂 -->
@@ -88,16 +105,7 @@
         <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"/>
         <property name="plugins">
             <array>
-                <!-- 分页插件配置 -->
-                <bean id="paginationInterceptor"
-                      class="com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor">
-                    <property name="overflow" value="true"/>
-                    <property name="limit" value="500"/>
-                    <property name="countSqlParser" ref="jsqlParserCountOptimize"/>
-                </bean>
-                <!-- 乐观锁插件 -->
-                <bean id="optimisticLockerInterceptor"
-                      class="com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor"/>
+                <ref bean="mybatisPlusInterceptor"/>
             </array>
         </property>
     </bean>

@@ -34,7 +34,7 @@ public class IndexController {
     @GetMapping("/date/test")
     @ResponseBody
     public Map<String, Object> testDate() {
-        Map<String, Object> map = new HashMap<>(7);
+        Map<String, Object> map = new HashMap<>(8);
 
         map.put("java.util.Date", new java.util.Date());
         map.put("java.sql.Date", new java.sql.Date(System.currentTimeMillis()));
