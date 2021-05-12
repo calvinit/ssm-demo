@@ -18,16 +18,17 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <spring.version>5.3.0</spring.version>
-        <junit.version>4.13.1</junit.version>
+        <spring.version>5.3.6</spring.version>
+        <junit.version>4.13.2</junit.version>
 
-        <lombok.version>1.18.16</lombok.version>
+        <lombok.version>1.18.20</lombok.version>
 
-        <mybatis-plus.version>3.4.0</mybatis-plus.version>
-        <freemarker.version>2.3.30</freemarker.version>
-        <druid.version>1.2.1</druid.version>
-        <jsqlparser.version>3.2</jsqlparser.version>
-        <mysql.version>8.0.22</mysql.version>
+        <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
+        <freemarker.version>2.3.31</freemarker.version>
+        <druid.version>1.2.6</druid.version>
+        <jsqlparser.version>4.0</jsqlparser.version>
+        <mysql.version>8.0.25</mysql.version>
 
         <jstl-api.version>1.2</jstl-api.version>
         <servlet-api.version>4.0.1</servlet-api.version>
@@ -35,11 +36,11 @@
 
         <springfox.version>3.0.0</springfox.version>
 
-        <commons-lang3.version>3.11</commons-lang3.version>
-        <jackson.version>2.11.3</jackson.version>
-        <mapstruct.version>1.4.1.Final</mapstruct.version>
+        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <jackson.version>2.12.3</jackson.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
 
-        <log4j.version>2.13.3</log4j.version>
+        <log4j.version>2.14.1</log4j.version>
         <slf4j.version>1.7.30</slf4j.version>
 
         <clean.plugin.version>3.1.0</clean.plugin.version>
@@ -209,7 +210,7 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-generator</artifactId>
-                <version>${mybatis-plus.version}</version>
+                <version>${mybatis-plus-generator.version}</version>
                 <scope>test</scope>
                 <optional>true</optional>
             </dependency>
