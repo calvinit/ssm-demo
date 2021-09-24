@@ -14,21 +14,21 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <java.version>11</java.version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
 
-        <spring.version>5.3.6</spring.version>
+        <spring.version>5.3.10</spring.version>
         <junit.version>4.13.2</junit.version>
 
         <lombok.version>1.18.20</lombok.version>
 
-        <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <mybatis-plus.version>3.4.3.4</mybatis-plus.version>
         <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
         <freemarker.version>2.3.31</freemarker.version>
-        <druid.version>1.2.6</druid.version>
-        <jsqlparser.version>4.0</jsqlparser.version>
-        <mysql.version>8.0.25</mysql.version>
+        <druid.version>1.2.7</druid.version>
+        <jsqlparser.version>4.2</jsqlparser.version>
+        <mysql.version>8.0.26</mysql.version>
 
         <jstl-api.version>1.2</jstl-api.version>
         <servlet-api.version>4.0.1</servlet-api.version>
@@ -37,17 +37,17 @@
         <springfox.version>3.0.0</springfox.version>
 
         <commons-lang3.version>3.12.0</commons-lang3.version>
-        <jackson.version>2.12.3</jackson.version>
+        <jackson.version>2.12.5</jackson.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
 
         <log4j.version>2.14.1</log4j.version>
-        <slf4j.version>1.7.30</slf4j.version>
+        <slf4j.version>1.7.32</slf4j.version>
 
         <clean.plugin.version>3.1.0</clean.plugin.version>
         <resources.plugin.version>3.2.0</resources.plugin.version>
         <compiler.plugin.version>3.8.1</compiler.plugin.version>
         <surefire.plugin.version>3.0.0-M5</surefire.plugin.version>
-        <war.plugin.version>3.3.1</war.plugin.version>
+        <war.plugin.version>3.3.2</war.plugin.version>
         <install.plugin.version>3.0.0-M1</install.plugin.version>
         <deploy.plugin.version>3.0.0-M1</deploy.plugin.version>
     </properties>
