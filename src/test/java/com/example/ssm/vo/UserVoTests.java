@@ -5,8 +5,9 @@ import com.example.ssm.entity.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.mapstruct.factory.Mappers;
 
 import java.time.LocalDateTime;
@@ -19,7 +20,9 @@ public class UserVoTests {
 
     @Test
     public void testMapping() throws JsonProcessingException {
-        ObjectWriter objectWriter = new ObjectMapper().writerWithDefaultPrettyPrinter();
+        ObjectWriter objectWriter = new ObjectMapper()
+                .registerModule(new JavaTimeModule())
+                .writerWithDefaultPrettyPrinter();
 
         LocalDateTime now = LocalDateTime.now();
 

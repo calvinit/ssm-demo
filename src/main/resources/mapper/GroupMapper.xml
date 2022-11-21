@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.ssm.mapper.GroupMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.ssm.entity.Group">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="visible" property="visible" />
+        <result column="remark" property="remark" />
+        <result column="create_dt" property="createDt" />
+        <result column="last_update_dt" property="lastUpdateDt" />
+    </resultMap>
 
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, `name`, `visible`, remark, create_dt, last_update_dt
+    </sql>
 </mapper>

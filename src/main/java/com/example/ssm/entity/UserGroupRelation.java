@@ -4,20 +4,28 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Data
-@EqualsAndHashCode(callSuper = false)
+/**
+ * 用户-群组关系表
+ *
+ * @author auto-generator
+ * @since 2022/11/21
+ */
+@Getter
+@Setter
 @Accessors(chain = true)
 @TableName("t_user_group_relation")
 public class UserGroupRelation implements Serializable {
 
-    private static final long serialVersionUID = 3715165496654956671L;
+    @Serial
+    private static final long serialVersionUID = -187408203315155266L;
 
     /**
      * ID

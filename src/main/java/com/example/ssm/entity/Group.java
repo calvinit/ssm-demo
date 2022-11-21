@@ -4,20 +4,28 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-@Data
-@EqualsAndHashCode(callSuper = false)
+/**
+ * 群组表
+ *
+ * @author auto-generator
+ * @since 2022/11/21
+ */
+@Getter
+@Setter
 @Accessors(chain = true)
 @TableName("t_group")
 public class Group implements Serializable {
 
-    private static final long serialVersionUID = 2930246041603072023L;
+    @Serial
+    private static final long serialVersionUID = 7464262768830403543L;
 
     /**
      * ID
@@ -28,13 +36,13 @@ public class Group implements Serializable {
     /**
      * 群组名称
      */
-    @TableField("name")
+    @TableField("`name`")
     private String name;
 
     /**
      * 是否可见（0：否，1：是）
      */
-    @TableField("visible")
+    @TableField("`visible`")
     private Boolean visible;
 
     /**
