@@ -24,7 +24,7 @@
 
         <lombok.version>1.18.24</lombok.version>
 
-        <mybatis-plus.version>3.5.2</mybatis-plus.version>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <mybatis-plus-generator.version>3.5.3</mybatis-plus-generator.version>
         <freemarker.version>2.3.31</freemarker.version>
         <druid.version>1.2.15</druid.version>
